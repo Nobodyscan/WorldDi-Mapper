@@ -18,7 +18,12 @@ namespace Content.Shared.Preferences
         public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
-            SelectedCharacterIndex = selectedCharacterIndex;
+            if (_characters.Count == 0)
+                throw new ArgumentException("Player preferences must contain at least one character profile.", nameof(characters));
+
+            SelectedCharacterIndex = _characters.ContainsKey(selectedCharacterIndex)
+                ? selectedCharacterIndex
+                : _characters.Keys.Min();
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
         }
