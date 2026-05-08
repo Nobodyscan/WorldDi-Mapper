@@ -95,9 +95,7 @@ namespace Content.Client.Lobby
             characters.Add(l, profile);
             Preferences = new PlayerPreferences(characters, l, Preferences.AdminOOCColor, Preferences.ConstructionFavorites);
 
-            // Ensure the freshly created character is the one used when joining immediately from lobby.
-            SelectCharacter(l);
-
+            // New slots should become selected immediately and remain selected on the server.
             UpdateCharacter(profile, l);
         }
 

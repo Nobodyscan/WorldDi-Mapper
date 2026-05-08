@@ -108,6 +108,46 @@ namespace Content.IntegrationTests.Tests.Lobby
                 Assert.That(serverCharacters, Has.Count.EqualTo(2));
                 Assert.That(serverCharacters[1].MemberwiseEquals(profile));
             });
+
+            await pair.CleanReturnAsync();
+        }
+
+        [Test]
+        public async Task CreateCharacterSelectsNewSlotOnServer()
+        {
+            await using var pair = await PoolManager.GetServerClient(new PoolSettings { InLobby = true });
+            var server = pair.Server;
+            var client = pair.Client;
+
+            var clientNetManager = client.ResolveDependency<IClientNetManager>();
+            var clientStateManager = client.ResolveDependency<IStateManager>();
+            var clientPrefManager = client.ResolveDependency<IClientPreferencesManager>();
+            var serverPrefManager = server.ResolveDependency<IServerPreferencesManager>();
+
+            await pair.RunTicksSync(1);
+            await PoolManager.WaitUntil(client, () => clientStateManager.CurrentState is LobbyState, 600);
+
+            var clientNetId = clientNetManager.ServerChannel!.UserId;
+            HumanoidCharacterProfile profile = null!;
+
+            await client.WaitAssertion(() =>
+            {
+                profile = HumanoidCharacterProfile.Random();
+                clientPrefManager.CreateCharacter(profile);
+
+                Assert.That(clientPrefManager.Preferences?.Characters.Count, Is.EqualTo(2));
+                Assert.That(clientPrefManager.Preferences?.SelectedCharacterIndex, Is.EqualTo(1));
+            });
+
+            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Characters.Count == 2, maxTicks: 60);
+
+            await server.WaitAssertion(() =>
+            {
+                var serverPrefs = serverPrefManager.GetPreferences(clientNetId);
+                Assert.That(serverPrefs.SelectedCharacterIndex, Is.EqualTo(1));
+                Assert.That(serverPrefs.SelectedCharacter.MemberwiseEquals(profile));
+            });
+
             await pair.CleanReturnAsync();
         }
     }

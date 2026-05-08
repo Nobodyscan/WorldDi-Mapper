@@ -120,7 +120,11 @@ namespace Content.Server.Preferences.Managers
                 [slot] = profile
             };
 
-            prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites);
+            var selectedIndex = curPrefs.Characters.ContainsKey(slot)
+                ? curPrefs.SelectedCharacterIndex
+                : slot;
+
+            prefsData.Prefs = new PlayerPreferences(profiles, selectedIndex, curPrefs.AdminOOCColor, curPrefs.ConstructionFavorites);
 
             if (ShouldStorePrefs(session.Channel.AuthType))
                 await _db.SaveCharacterSlotAsync(userId, profile, slot);
