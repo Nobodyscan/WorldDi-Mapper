@@ -1267,3 +1267,19 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: MothPlushie
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDi       # Уникальный ID
+  name: Плюшевая Ди      # Название предмета
+  description: От неё пахнет лавандой!  # Описание
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/di.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: Objects/Fun/Plushies/di.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/di.rsi
