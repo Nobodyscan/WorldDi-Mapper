@@ -386,17 +386,15 @@ namespace Content.Server.GameTicking
                 DebugTools.Assert(_userDb.IsLoadComplete(session), $"Player was readied up but didn't have user DB data loaded yet??");
 #endif
 
+                if (!_prefsManager.TryGetCachedPreferences(userId, out var preferences))
+                {
+                    _sawmill.Warning(
+                        $"Player {session.Name} ({userId}) readied up but their preferences were not cached; skipping round-start spawn.");
+                    continue;
+                }
+
                 readyPlayers.Add(session);
-                HumanoidCharacterProfile profile;
-                if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
-                {
-                    profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-                }
-                else
-                {
-                    profile = HumanoidCharacterProfile.Random();
-                }
-                readyPlayerProfiles.Add(userId, profile);
+                readyPlayerProfiles.Add(userId, (HumanoidCharacterProfile)preferences.SelectedCharacter);
             }
 
             DebugTools.AssertEqual(readyPlayers.Count, ReadyPlayerCount());

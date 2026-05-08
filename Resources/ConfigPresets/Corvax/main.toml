@@ -4,6 +4,8 @@ desc = "Корвакс — первый русскоязычный проект 
 maxplayers = 190
 soft_max_players = 105
 map_rotation = true
+
+[ic]
 random_characters = false
 
 [server]
