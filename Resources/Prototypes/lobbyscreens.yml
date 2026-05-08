@@ -3,3 +3,7 @@
 - type: lobbyBackground
   id: MyBackgroundOneCorvax 
   background: /Textures/LobbyScreens/lobby-art-Di.webp
+
+- type: lobbyBackground
+  id: MyBackgroundTwoCorvax 
+  background: /Textures/LobbyScreens/lobby-art-USSP.png 
