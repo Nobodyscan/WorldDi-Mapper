@@ -30,6 +30,7 @@ namespace Content.Client.LateJoin
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly LobbyUIController _lobbyUi = default!;
 
         public event Action<(NetEntity, string)> SelectedId;
 
@@ -69,6 +70,7 @@ namespace Content.Client.LateJoin
             SelectedId += x =>
             {
                 var (station, jobId) = x;
+                _lobbyUi.SaveDirtyProfileIfAny();
                 _sawmill.Info($"Late joining as ID: {jobId}");
                 _consoleHost.ExecuteCommand($"joingame {CommandParsing.Escape(jobId)} {station}");
                 Close();
