@@ -18,7 +18,11 @@ namespace Content.Shared.Preferences
         public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
-            SelectedCharacterIndex = selectedCharacterIndex;
+            SelectedCharacterIndex = _characters.Count == 0
+                ? selectedCharacterIndex
+                : _characters.ContainsKey(selectedCharacterIndex)
+                    ? selectedCharacterIndex
+                    : _characters.Keys.Min();
             AdminOOCColor = adminOOCColor;
             ConstructionFavorites = constructionFavorites;
         }
