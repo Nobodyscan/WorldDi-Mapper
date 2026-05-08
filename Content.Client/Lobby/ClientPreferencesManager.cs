@@ -93,7 +93,10 @@ namespace Content.Client.Lobby
 
             var l = lowest.Value;
             characters.Add(l, profile);
-            Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor, Preferences.ConstructionFavorites);
+            Preferences = new PlayerPreferences(characters, l, Preferences.AdminOOCColor, Preferences.ConstructionFavorites);
+
+            // Ensure the freshly created character is the one used when joining immediately from lobby.
+            SelectCharacter(l);
 
             UpdateCharacter(profile, l);
         }
