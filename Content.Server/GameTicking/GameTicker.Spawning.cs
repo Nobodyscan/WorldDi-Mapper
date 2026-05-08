@@ -375,6 +375,20 @@ namespace Content.Server.GameTicking
             if (!_userDb.IsLoadComplete(player))
                 return;
 
+            var prefs = _prefsManager.GetPreferencesOrNull(player.UserId);
+            if (prefs?.SelectedCharacter is HumanoidCharacterProfile selected)
+            {
+                _sawmill.Info(
+                    $"MakeJoinGame for {player.Name} ({player.UserId}) with selected slot {prefs.SelectedCharacterIndex}, " +
+                    $"character '{selected.Name}', species '{selected.Species}', requested job '{jobId ?? "<auto>"}'.");
+            }
+            else
+            {
+                _sawmill.Warning(
+                    $"MakeJoinGame for {player.Name} ({player.UserId}) without cached humanoid selected profile. " +
+                    $"Requested job '{jobId ?? "<auto>"}'.");
+            }
+
             SpawnPlayer(player, station, jobId, silent: silent);
         }
 
