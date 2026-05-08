@@ -378,7 +378,7 @@ namespace Content.Server.GameTicking
             var prefs = _prefsManager.GetPreferencesOrNull(player.UserId);
             if (prefs?.SelectedCharacter is HumanoidCharacterProfile selected)
             {
-                _sawmill.Debug(
+                _sawmill.Info(
                     $"MakeJoinGame for {player.Name} ({player.UserId}) with selected slot {prefs.SelectedCharacterIndex}, " +
                     $"character '{selected.Name}', species '{selected.Species}', requested job '{jobId ?? "<auto>"}'.");
             }
