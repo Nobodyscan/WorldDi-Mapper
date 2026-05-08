@@ -25,6 +25,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IResourceCache _resourceCache = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+        [Dependency] private readonly LobbyUIController _lobbyUi = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
@@ -101,12 +102,15 @@ namespace Content.Client.Lobby
 
         private void OnSetupPressed(BaseButton.ButtonEventArgs args)
         {
+            _lobbyUi.SaveDirtyProfileIfAny();
             SetReady(false);
             Lobby?.SwitchState(LobbyGui.LobbyGuiState.CharacterSetup);
         }
 
         private void OnReadyPressed(BaseButton.ButtonEventArgs args)
         {
+            _lobbyUi.SaveDirtyProfileIfAny();
+
             if (!_gameTicker.IsGameStarted)
             {
                 return;
@@ -117,6 +121,7 @@ namespace Content.Client.Lobby
 
         private void OnReadyToggled(BaseButton.ButtonToggledEventArgs args)
         {
+            _lobbyUi.SaveDirtyProfileIfAny();
             SetReady(args.Pressed);
         }
 

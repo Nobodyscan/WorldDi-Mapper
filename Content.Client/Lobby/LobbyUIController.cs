@@ -199,6 +199,14 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         _profileEditor?.RefreshLoadouts();
     }
 
+    public void SaveDirtyProfileIfAny()
+    {
+        if (_profileEditor?.Profile == null || !_profileEditor.IsDirty)
+            return;
+
+        SaveProfile();
+    }
+
     private void SaveProfile()
     {
         DebugTools.Assert(EditedProfile != null);
