@@ -1,2 +1,5 @@
 # Corvax lobby backgrounds intentionally removed.
 # Add your own `- type: lobbyBackground` entries here.
+- type: lobbyBackground
+  id: MyBackgroundOne
+  background: Resources\Textures\LobbyScreens\lobby-art-Di.webp
