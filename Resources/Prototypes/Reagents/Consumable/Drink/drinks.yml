@@ -623,9 +623,9 @@
   id: Apple cider
   name: Яблочный сидр
   parent: BaseDrink
-  desc: reagent-desc-apple-cider
+  desc: Яблочный сидр
   physicalDesc: reagent-physical-desc-aromatic
-  flavor: alcohol
+  flavor: applecider
   color: "#8B4513"
   recognizable: true
   metabolisms:
