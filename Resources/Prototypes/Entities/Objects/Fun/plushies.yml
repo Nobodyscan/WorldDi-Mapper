@@ -1283,3 +1283,35 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: DiPlushie
+
+- type: entity
+  parent: BasePlushie
+  id: Плюшевая Тишина     # Уникальный ID
+  name: Плюшевая Тишина      # Название предмета
+  description: Плюшевая Звёздачка - мягкое воплощение света, что сияет ярче всех и тихо ведёт за собой сердца. Любимица каждого, нежная и тёплая Тишина, когда она рядом становится спокойнее и уютнее.  # Описание
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/senior_engineer.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: Objects/Fun/Plushies/senior_engineer.rsi
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: MuteSoulPlushie
+
+  - type: entity
+  parent: BasePlushie
+  id: Плюшевый Альберт    # Уникальный ID
+  name: Плюшевый Альберт      # Название предмета
+  description: Альберт ЧР-1337 — КПБ с плафоном от старой офисной лампы времён СССП вместо головы. Любит Тишину и превращать станции в шаттлы.  # Описание
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/Ips_albert.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: Objects/Fun/Plushies/Ips_albert.rsi
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AlbertPlushie
