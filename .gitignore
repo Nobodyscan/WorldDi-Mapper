@@ -314,6 +314,3 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
-
-# RobustToolbox (should not be committed, it's built separately)
-RobustToolbox/
