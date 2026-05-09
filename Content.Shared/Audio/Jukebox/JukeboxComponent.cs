@@ -14,6 +14,10 @@ public sealed partial class JukeboxComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? AudioStream;
 
+    [DataField, AutoNetworkedField]
+    public float Volume = 0f;
+
+    ///откат изменений для гита
     /// <summary>
     /// RSI state for the jukebox being on.
     /// </summary>
@@ -58,6 +62,12 @@ public sealed class JukeboxSelectedMessage(ProtoId<JukeboxPrototype> songId) : B
 public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMessage
 {
     public float SongTime { get; } = songTime;
+}
+
+[Serializable, NetSerializable]
+public sealed class JukeboxSetVolumeMessage(float volume) : BoundUserInterfaceMessage
+{
+    public float Volume { get; } = volume;
 }
 
 [Serializable, NetSerializable]

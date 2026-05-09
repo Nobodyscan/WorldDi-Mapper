@@ -13,6 +13,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private JukeboxMenu? _menu;
 
+    ///откат изменений для гита
     public JukeboxBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         IoCManager.InjectDependencies(this);
@@ -43,6 +44,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         _menu.OnSongSelected += SelectSong;
 
+        _menu.OnVolumeChanged += volume => SendMessage(new JukeboxSetVolumeMessage(volume));
         _menu.SetTime += SetTime;
         PopulateMusic();
         Reload();
@@ -60,13 +62,16 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
-            var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
-            _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
+            var resolved = EntMan.System<AudioSystem>().ResolveSound(songProto.Path);
+            var length = EntMan.System<AudioSystem>().GetAudioLength(resolved);
+            _menu.SetSelectedSong(songProto.Name, (float)length.TotalSeconds);
         }
         else
         {
             _menu.SetSelectedSong(string.Empty, 0f);
         }
+
+        _menu.SetVolumeSlider(jukebox.Volume);
     }
 
     public void PopulateMusic()
