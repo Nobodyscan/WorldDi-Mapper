@@ -1300,7 +1300,7 @@
     entries:
       CottonBurger: MuteSoulPlushie
 
-  - type: entity
+- type: entity
   parent: BasePlushie
   id: Плюшевый Альберт    # Уникальный ID
   name: Плюшевый Альберт      # Название предмета
