@@ -1095,4 +1095,9 @@
     currentLabel: reagent-name-apple-cider
   - type: Sprite
     sprite: Objects/Consumable/Drinks/applecider.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
   - type: Sealable
