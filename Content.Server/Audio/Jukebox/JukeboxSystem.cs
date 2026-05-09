@@ -18,6 +18,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
 
+    ///откат изменений для гита
     public override void Initialize()
     {
         base.Initialize();

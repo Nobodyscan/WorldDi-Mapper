@@ -17,6 +17,7 @@ public sealed partial class JukeboxComponent : Component
     [DataField, AutoNetworkedField]
     public float Volume = 0f;
 
+    ///откат изменений для гита
     /// <summary>
     /// RSI state for the jukebox being on.
     /// </summary>

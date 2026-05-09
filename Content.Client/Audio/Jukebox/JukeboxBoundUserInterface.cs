@@ -13,6 +13,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private JukeboxMenu? _menu;
 
+    ///откат изменений для гита
     public JukeboxBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         IoCManager.InjectDependencies(this);

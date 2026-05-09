@@ -18,6 +18,7 @@ public sealed partial class JukeboxMenu : FancyWindow
     [Dependency] private readonly IEntityManager _entManager = default!;
     private AudioSystem _audioSystem;
 
+    ///откат изменений для гита
     /// <summary>
     /// Are we currently 'playing' or paused for the play / pause button.
     /// </summary>
