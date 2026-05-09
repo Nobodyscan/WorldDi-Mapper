@@ -1092,7 +1092,7 @@
         - ReagentId: Apple cider
           Quantity: 100
   - type: Label
-    currentLabel: reagent-name-apple-cider
+    currentLabel: Яблочный сидр
   - type: Sprite
     sprite: Objects/Consumable/Drinks/applecider.rsi
   - type: SolutionContainerVisuals
