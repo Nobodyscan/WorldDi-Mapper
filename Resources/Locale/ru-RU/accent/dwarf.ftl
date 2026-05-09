@@ -283,3 +283,5 @@ accent-dwarf-words-147 = СБ
 accent-dwarf-words-replace-147 = стража
 accent-dwarf-words-148 = a
 accent-dwarf-words-replace-148 = ae
+accent-dwarf-words-149 = хлеб
+accent-dwarf-words-replace-149 = хлеб на пиве

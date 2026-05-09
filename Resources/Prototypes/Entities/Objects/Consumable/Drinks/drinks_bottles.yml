@@ -1083,7 +1083,7 @@
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkAppleciderBottleFull
   name: Яблочный сидр
-  description: Бутылка освежающего яблочногосидра. Почему она такая большая?
+  description: Бутылка освежающего яблочного сидра. Почему она такая большая?
   components:
   - type: SolutionContainerManager
     solutions:
