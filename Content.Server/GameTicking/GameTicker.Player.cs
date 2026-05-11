@@ -56,7 +56,7 @@ namespace Content.Server.GameTicking
                     // Make the player actually join the game.
                     // timer time must be > tick length
                     // Corvax-Queue-Start
-                    if (!IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out _))
+                    if (!IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out var joinQueueManager) || !joinQueueManager.IsEnabled)
                         Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
                     // Corvax-Queue-End
 
