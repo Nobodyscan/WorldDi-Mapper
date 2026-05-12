@@ -1555,3 +1555,25 @@
       amount: 1
   products:
     BacchusBlessing: 4
+
+- type: reaction
+  id: Morby
+  reactants:
+    JuiceLime:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+    Rum:
+      amount: 2
+    Gin:
+      amount: 1
+    Tequila:
+      amount: 1
+    Vodka:
+      amount: 1
+    BlueCuracao:
+      amount: 2
+    Ice:
+      amount: 1
+  products:
+    Morby: 10

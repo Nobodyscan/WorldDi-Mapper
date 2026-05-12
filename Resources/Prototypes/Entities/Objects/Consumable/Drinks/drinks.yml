@@ -2754,3 +2754,19 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/bacchusblessing.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: MorbyGlass
+  suffix: morby
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Morby
+          Quantity: 30
+  - type: Icon
+    sprite: Objects\Consumable\Drinks\morby.rsi
+    state: icon
