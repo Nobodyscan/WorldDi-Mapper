@@ -2556,7 +2556,7 @@
   flavor: morby
   color: "#005fa8"
   metamorphicSprite:
-    sprite: Objects\Consumable\Drinks\morby.rsi
+    sprite: Objects/Consumable/Drinks/morby.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
