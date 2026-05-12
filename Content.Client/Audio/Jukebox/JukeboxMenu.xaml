@@ -7,7 +7,7 @@
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
             <Label Name="SongName" Text="---" />
             <Label Name="VolumeLabel" Text="Volume: 0 dB" />
-            <Slider Name="VolumeSlider" HorizontalExpand="True" MinValue="-32" MaxValue="5" Step="1" Value="0" />
+            <Slider Name="VolumeSlider" HorizontalExpand="True" MinValue="-32" MaxValue="5" Value="0" />
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
