@@ -2758,6 +2758,8 @@
 - type: entity
   parent: DrinkGlass
   id: MorbyGlass
+  name: стакан морби # Задаем нормальное имя для админ-панели и игры
+  description: Странная смесь, пахнет морем и чем-то ещё непонятным.
   suffix: morby
   components:
   - type: SolutionContainerManager
@@ -2771,5 +2773,11 @@
     sprite: Objects/Consumable/Drinks/morby.rsi
     layers:
     - state: icon_empty
+      map: ["enum.SolutionContainerLayers.Base"] # Обязательно указываем, что это база!
     - state: fill-5
       map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals # Переопределяем визуал для этого стакана
+    maxFillLevels: 5
+    fillBaseName: fill-
+    changeColor: false # Запрещаем движку заливать спрайты цветом реагента
+    emptySpriteName: icon_empty
