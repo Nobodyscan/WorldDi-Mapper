@@ -46,6 +46,7 @@
   equipment:
     id: CMOPDA
     ears: ClothingHeadsetCMO
+    eyes: ВизорГлавногоВрача
     belt: ClothingBeltMedicalFilled
   storage:
     back:
