@@ -1,1 +1,1 @@
-changelog-tab-title-ChangelogSyndie = Обновления Corvax
+changelog-tab-title-ChangelogSyndie = Обновления WorldDi
