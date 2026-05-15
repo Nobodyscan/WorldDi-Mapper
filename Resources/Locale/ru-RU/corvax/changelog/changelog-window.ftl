@@ -1,1 +1,1 @@
-changelog-tab-title-ChangelogSyndie = Обновления WorldDi
+changelog-tab-title-ChangelogSyndie = Обновления МирДи
