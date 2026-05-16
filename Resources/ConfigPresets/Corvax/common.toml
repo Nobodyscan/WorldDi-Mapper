@@ -21,6 +21,7 @@ lobbyduration = 240
 map_pool = "CorvaxMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
 round_restart_time = 240
+role_timers = false # temporary: disables playtime requirements for roles. Set true to enable again.
 
 [ic]
 random_characters = false
