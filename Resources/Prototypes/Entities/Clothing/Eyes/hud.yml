@@ -319,3 +319,26 @@
   parent: [ClothingEyesEyepatchHudDiag, ClothingHeadEyeBaseFlipped]
   id: ClothingEyesEyepatchHudDiagFlipped
   name: diagnostic hud eyepatch
+
+- type: entity
+  parent: ClothingEyesHudMedical  # Наследование базы мед худа
+  id: ВизорГлавногоВрача
+  name: Визор главного врача
+  description: Продвинутый визор, совмещающий функции медицинского визора, защиты от вспышек и химического анализатора.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Hud/chiefmedvisor.rsi # Заменить на другой спрайт
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Eyes/Hud/chiefmedvisor.rsi 
+  - type: FlashImmunity
+  - type: SolutionScanner
+  - type: ShowHealthBars # Показывать полоски здоровья роботов и органиков
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+  - type: Tag
+    tags:
+    - HudMedical
+    - WhitelistChameleon 

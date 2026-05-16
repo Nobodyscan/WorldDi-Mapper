@@ -16,7 +16,7 @@ public abstract class SharedChatSystem : EntitySystem
     public const char LocalPrefix = '>';
     public const char ConsolePrefix = '/';
     public const char DeadPrefix = '\\';
-    public const char LOOCPrefix = '_'; // Corvax-Localization
+    public const char LOOCPrefix = '('; // Corvax-Localization
     public const char OOCPrefix = '[';
     public const char EmotesPrefix = '%'; // Corvax-Localization
     public const char EmotesAltPrefix = '*';

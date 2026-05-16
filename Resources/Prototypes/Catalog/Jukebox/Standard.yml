@@ -45,3 +45,9 @@
   name: А мы не ангелы, парень
   path:
     path: /Audio/Jukebox/neangely.ogg
+
+- type: jukebox
+  id: prizrachnayaledy
+  name: Призрачная леди
+  path:
+    path: /Audio/Jukebox/prizrachnayaledy.ogg

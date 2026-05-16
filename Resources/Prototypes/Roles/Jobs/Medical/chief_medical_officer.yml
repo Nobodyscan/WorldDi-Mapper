@@ -46,6 +46,7 @@
   equipment:
     id: CMOPDA
     ears: ClothingHeadsetCMO
+    eyes: ВизорГлавногоВрача
     belt: ClothingBeltMedicalFilled
   storage:
     back:
@@ -57,7 +58,7 @@
   hasMindShield: true
   equipment:
     head: ClothingHeadHatBeretCmo
-    eyes: ClothingEyesHudMedical
+    eyes: ВизорГлавногоВрача
     mask: ClothingMaskSterile
     neck: ClothingCloakCmo
     outerClothing: ClothingOuterCoatLabCmo
