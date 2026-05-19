@@ -1,0 +1,11 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+        Title="Выбор комплекта Аегис"
+        MinSize="320 140">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="12">
+        <Label Text="Выберите вооружение для операции:" HorizontalAlignment="Center"/>
+        <BoxContainer Orientation="Horizontal" SeparationOverride="15" HorizontalAlignment="Center">
+            <Button Name="BulldogButton" Text="Бульдог + 4 маг." MinSize="130 45"/>
+            <Button Name="C20rButton" Text="C-20r + 4 маг." MinSize="130 45"/>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>

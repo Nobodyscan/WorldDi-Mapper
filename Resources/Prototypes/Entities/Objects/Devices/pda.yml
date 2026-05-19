@@ -1531,3 +1531,31 @@
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: AegisPDA
+  name: КПК оперативника Aegis
+  description: Стильный и прочный кпк оперативников. Смотри не заляпай! 
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/pda.rsi
+    layers:
+    - state: pda-aegis
+    # Мы не пишем map, движок сам назначит этот спрайт базовым слоем (индекс 0)
+  - type: Pda
+    id: AegisIDCard
+    penSlot:
+      startingItem: Pen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - AstroNavCartridge
+      - MedTekCartridge

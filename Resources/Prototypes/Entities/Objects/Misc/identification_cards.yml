@@ -895,3 +895,17 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
+
+- type: entity
+  parent: IDCardStandard
+  id: AegisIDCard
+  name: айди карта оперативника Aegis
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: ert_aegis
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOfficial #потом поменять на рольку оперативника Аегис!!

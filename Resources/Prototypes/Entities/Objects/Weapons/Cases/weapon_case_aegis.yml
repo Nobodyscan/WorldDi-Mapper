@@ -1,0 +1,22 @@
+- type: entity
+  id: WeaponCaseAegis
+  parent: BaseItem
+  name: оружейный кейс оперативника Aegis
+  description: Тяжелый герметичный кейс с технологией блюспейс. Содержит комплект тактического вооружения на выбор.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Cases/aegis_case.rsi
+    state: icon
+  - type: Item # Добавляем компонент Item
+    size: Huge # Базовый размер (на случай, если кейс кладут в обычное хранилище без сетки)
+    shape:
+    - 0, 0, 3, 1 # Координаты: x1, y1, x2, y2 (4x2 клетки)
+  - type: ActivatableUI
+    key: enum.AegisWeaponCaseUiKey.Key
+    singleUser: true
+    closeOnHandDeselect: true
+  - type: UserInterface
+    interfaces:
+      enum.AegisWeaponCaseUiKey.Key:
+        type: AegisWeaponCaseBoundUserInterface
+  - type: AegisWeaponCase

@@ -300,3 +300,26 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  # Переносим ShowSecurityIcons в родителей через запятую:
+  parent: [ClothingEyesBase, ShowSecurityIcons] 
+  id: ClothingEyesAegisGlasses
+  name: защитные очки Aegis
+  description: Модернизированные очки службы безопасности, созданные для работы оперативников Aegis.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: ShowHealthBars          # Оставляем полоски здоровья тут, как в визоре ГВ
+    damageContainers:
+    - Biological                  # органики (люди, ксеносы)
+    - Inorganic                   # синтетики (роботы, киборги)
+    - Silicon                     # кремниевые формы жизни (ИИ, борги)
+  - type: Tag
+    tags:
+    - WhitelistChameleon
