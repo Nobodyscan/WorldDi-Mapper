@@ -908,4 +908,4 @@
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
-    job: CentralCommandOfficial #потом поменять на рольку оперативника Аегис!!
+    job: JobAegisOperative #потом поменять на рольку оперативника Аегис!!

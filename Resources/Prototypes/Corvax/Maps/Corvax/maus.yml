@@ -19,6 +19,7 @@
           emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_maus.yml
         - type: StationJobs
           availableJobs:
+            JobAegisOperative: [ 1, 1 ]
             # command
             Captain: [ 1, 1 ]
             IAA: [1, 1]

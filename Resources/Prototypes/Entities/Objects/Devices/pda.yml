@@ -1541,7 +1541,16 @@
   - type: Sprite
     sprite: Objects/Devices/pda.rsi
     layers:
-    - state: pda-aegis
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
+    - state: "light_overlay_wide"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay_wide"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
     # Мы не пишем map, движок сам назначит этот спрайт базовым слоем (индекс 0)
   - type: Pda
     id: AegisIDCard

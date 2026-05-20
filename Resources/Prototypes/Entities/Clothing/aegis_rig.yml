@@ -53,3 +53,20 @@
   - type: Storage # Переопределяем компонент хранилища
     grid:
     - 0, 0, 8, 3 # x1, y1, x2, y2 (от 0 до 8 по ширине = 9 клеток; от 0 до 2 по высоте = 3 клетки)
+
+# Заполненная версия рюкзака RIG "Aegis"
+- type: entity
+  parent: AegisRigBackpack
+  id: AegisRigBackpackFilled
+  suffix: Заполненный
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: OxygenTankFilled
+      - id: Zipties
+        amount: 3
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+      - id: WeaponCaseAegis

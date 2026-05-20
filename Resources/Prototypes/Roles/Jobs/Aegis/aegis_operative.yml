@@ -1,0 +1,33 @@
+- type: job
+  id: JobAegisOperative
+  name: оперативник Аегис
+  description: Защищайте глав станции ценой собственной жизни!
+  playTimeTracker: JobAegisOperative
+  weight: 10
+  startingGear: AegisOperativeGear 
+  icon: "JobIconAegis" 
+  supervisors: job-supervisors-centcom
+  canBeAntag: false # Если они не могут быть предателями
+  accessGroups:
+  - AllAccess
+  # доступы 
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: AegisOperativeGear
+  equipment:
+    eyes: ClothingEyesAegisGlasses
+    jumpsuit: ClothingUniformJumpsuitOperativeAegis
+    outerClothing: ClothingOuterVestWeb
+    shoes: ClothingShoesBootsJackFilled
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltCommand
+    mask: ClothingMaskGasSwat
+    id: AegisPDA # ID КПК"
+    back: AegisRigBackpackFilled # заполненный рюкзак
+    belt: ClothingBeltAegisFilled # заполненная РПС
