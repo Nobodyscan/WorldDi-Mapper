@@ -19,6 +19,7 @@
           path: /Maps/Shuttles/cargo_exo.yml
         - type: StationJobs
           availableJobs:
+            JobAegisOperative: [ 1, 1 ]
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

@@ -19,6 +19,7 @@
           path: /Maps/Shuttles/cargo_plasma.yml
         - type: StationJobs
           availableJobs: #Total of 66 jobs roundstart, max of 93 inc. latejoins and trainees.
+            JobAegisOperative: [ 1, 1 ]
             #command - 7
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA

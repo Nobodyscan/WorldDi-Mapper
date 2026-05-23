@@ -19,6 +19,7 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
           availableJobs:
+            JobAegisOperative: [ 1, 1 ]
             #service
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA

@@ -26,6 +26,7 @@
           emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
         - type: StationJobs
           availableJobs:
+            JobAegisOperative: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Passenger: [ -1, -1 ]

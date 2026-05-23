@@ -1,4 +1,13 @@
 - type: department
+  id: Aegis
+  name: Центральное командование
+  description: Члены центрального командования
+  color: "#2b2f36" # Цвет потом мб поменяю
+  weight: 200
+  roles:
+  - JobAegisOperative
+
+- type: department
   id: Cargo
   name: department-Cargo
   description: department-Cargo-description
@@ -148,3 +157,4 @@
   - Psychologist
   - Pilot # Corvax-Pilot
   primary: false
+

@@ -730,3 +730,35 @@
     whitelist:
       tags:
       - WizardWand
+
+# 1. Базовая версия РПС (пустая)
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAegis
+  name: РПС "Aegis"
+  description: Тактическая разгрузочная система "Aegis".
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/aegis_webbing.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/aegis_webbing.rsi
+  - type: Item
+    size: Huge
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+
+# 2. Заполненная версия РПС (для спавна с лутом)
+- type: entity
+  parent: ClothingBeltAegis
+  id: ClothingBeltAegisFilled
+  suffix: Заполненный
+  components:
+  - type: StorageFill
+    contents:
+      - id: ChemistryBottleEpinephrine
+      - id: ChemistryBottleEphedrine
+        amount: 2
+      - id: ChemistryBottleOmnizine
+        amount: 2
+      - id: MedkitCombatFilled

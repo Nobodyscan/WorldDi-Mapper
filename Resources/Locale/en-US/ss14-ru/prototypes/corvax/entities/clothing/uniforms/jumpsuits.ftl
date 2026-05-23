@@ -12,5 +12,7 @@ ent-ClothingUniformJumpsuitHoPTurtleneck = head of personal's turtleneck
     .desc = It's Head of Personal's turtleneck.
 ent-ClothingUniformJumpsuitHoSBlack = head of security's black suit
     .desc = It's Head of Security's black suit.
+ent-ClothingUniformJumpsuitOperativeAegis = Aegis operative jumpsuit
+    .desc = A dark service jumpsuit for Aegis operatives who prefer discipline to decoration.
 ent-ClothingUniformJumpsuitRDClassical = research director's classical suit
     .desc = It's Research Director's сlassical suit.

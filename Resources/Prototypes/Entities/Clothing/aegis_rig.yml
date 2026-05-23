@@ -1,0 +1,72 @@
+# 1. Экшен для кнопки развертывания
+- type: entity
+  id: ActionToggleAegisRig
+  parent: BaseAction
+  name: Переключить систему RIG
+  description: Разворачивает броню скафандра из вашего рюкзака.
+  components:
+  - type: InstantAction
+    icon: { sprite: Clothing/OuterClothing/Hardsuits/aegis_suit.rsi, state: icon }
+    event: !type:ToggleRigActionEvent {}
+
+# 2. Шлем RIG
+- type: entity
+  id: AegisRigHelmet
+  parent: ClothingHeadHelmetHardsuitSecurity
+  name: шлем RIG "Aegis"
+  description: Надежный шлем со встроенным тактическим фонарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/aegis_helmet.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/aegis_helmet.rsi
+
+# 3. Фантомный скафандр (броня)
+- type: entity
+  id: AegisRigSuitPhantom
+  parent: ClothingOuterHardsuitSecurity
+  name: броня RIG "Aegis"
+  description: Развернутая броня оперативника.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/aegis_suit.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/aegis_suit.rsi
+  - type: Unremoveable 
+  - type: ToggleableClothing # Механика шлема
+    clothingPrototype: AegisRigHelmet
+
+# 4. Сам рюкзак RIG
+- type: entity
+  id: AegisRigBackpack
+  parent: ClothingBackpackSecurity
+  name: рюкзак RIG "Aegis"
+  description: Вместительный рюкзак со встроенной разворачиваемой броней.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/aegis_backpack.rsi
+  - type: Clothing
+    sprite: Clothing/Back/Backpacks/aegis_backpack.rsi
+  - type: RigBackpack
+    suitPrototype: AegisRigSuitPhantom
+    toggleAction: ActionToggleAegisRig
+  - type: Storage # Переопределяем компонент хранилища
+    grid:
+    - 0, 0, 8, 3 # x1, y1, x2, y2 (от 0 до 8 по ширине = 9 клеток; от 0 до 2 по высоте = 3 клетки)
+
+# Заполненная версия рюкзака RIG "Aegis"
+- type: entity
+  parent: AegisRigBackpack
+  id: AegisRigBackpackFilled
+  suffix: Заполненный
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: OxygenTankFilled
+      - id: Zipties
+        amount: 3
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+      - id: WeaponCaseAegis
